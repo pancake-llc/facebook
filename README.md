@@ -1,6 +1,9 @@
 # What
-- Facebook for unity
+- Facebook
 
+# Environment
+- Project open with unity 2021.3 LTS
+- Support unity 2019+
 
 # How To Install
 
