@@ -13,4 +13,5 @@ for version 1.0.0
 ```csharp
 "com.pancake.facebook": "https://github.com/pancake-llc/facebook.git?path=Assets/_Root#1.0.0",
 "com.google.external-dependency-manager": "https://github.com/pancake-llc/external-dependency-manager.git?path=Assets/_Root#1.2.169",
+"com.pancake.common": "https://github.com/pancake-llc/common.git?path=Assets/_Root#1.2.3",
 ```

@@ -1,0 +1,18 @@
+{
+    "name": "pancake@facebook",
+    "rootNamespace": "",
+    "references": [
+        "GUID:b7d258362c2b06342bf6220fba18596a"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": true,
+    "precompiledReferences": [
+        "Facebook.Unity.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
