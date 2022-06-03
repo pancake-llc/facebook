@@ -1,5 +1,12 @@
 {
   "dependencies": {
+    "com.cysharp.unitask": {
+      "version": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask#2.3.1",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "33d32baea4d50040e0601b725a694dcf3dcf6640"
+    },
     "com.google.external-dependency-manager": {
       "version": "https://github.com/pancake-llc/external-dependency-manager.git?path=Assets/_Root#1.2.169",
       "depth": 0,
@@ -8,13 +15,20 @@
       "hash": "8479d378666d8af0e30fc0308df447196857659d"
     },
     "com.pancake.common": {
-      "version": "https://github.com/pancake-llc/common.git?path=Assets/_Root#1.2.3",
+      "version": "https://github.com/pancake-llc/common.git?path=Assets/_Root#1.2.5",
       "depth": 0,
       "source": "git",
       "dependencies": {
-        "com.unity.nuget.newtonsoft-json": "3.0.1"
+        "com.unity.nuget.newtonsoft-json": "3.0.2"
       },
-      "hash": "84532e02bc9c8c12c3d5841d5fc2ff8251406548"
+      "hash": "09f0e9717aa5042a18bc1935ded86d811a1c9176"
+    },
+    "com.pancake.simplejson": {
+      "version": "https://github.com/pancake-llc/SimpleJSON.git?path=Assets/_Root#1.0.2",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "cb8168a6e41f6531649d5befb3f895381365e1a3"
     },
     "com.unity.ext.nunit": {
       "version": "1.0.6",
@@ -49,7 +63,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.nuget.newtonsoft-json": {
-      "version": "3.0.1",
+      "version": "3.0.2",
       "depth": 1,
       "source": "registry",
       "dependencies": {},

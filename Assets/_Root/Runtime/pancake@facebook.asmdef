@@ -2,7 +2,9 @@
     "name": "pancake@facebook",
     "rootNamespace": "",
     "references": [
-        "GUID:b7d258362c2b06342bf6220fba18596a"
+        "GUID:b7d258362c2b06342bf6220fba18596a",
+        "GUID:f51ebe6a0ceec4240a699833d6309b23",
+        "GUID:1c356002f70e0684e81f29a038c9392c"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
