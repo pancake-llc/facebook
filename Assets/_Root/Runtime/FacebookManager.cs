@@ -12,6 +12,9 @@ namespace Pancake.Facebook
 
     public class FacebookManager : MonoBehaviour
     {
+        private static FacebookManager instance;
+        public static FacebookManager Instance => instance;
+
         public Action onLoginComplete;
         public Action onLoginFaild;
         public Action onLogoutComplete;
@@ -19,11 +22,11 @@ namespace Pancake.Facebook
 
         public bool publicProfile = true;
         public bool email = true;
-        public bool gamingProfile;
-        public bool gamingUserPicture;
+        public bool gamingProfile = true;
+        public bool gamingUserPicture = true;
         public bool userAgeRange;
         public bool userBirthday;
-        public bool userFriends;
+        public bool userFriends = true;
         public bool userGender;
         public bool userHometown;
         public bool userLink;
@@ -62,6 +65,8 @@ namespace Pancake.Facebook
 
         private void Awake()
         {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
             UserId = "";
             Token = "";
 
@@ -83,7 +88,7 @@ namespace Pancake.Facebook
             {
                 // Signal an app activation App Event
                 FB.ActivateApp();
-
+                
                 if (IsLoggedIn)
                 {
 #if UNITY_IOS
@@ -125,7 +130,7 @@ namespace Pancake.Facebook
         }
 #endif
 
-        private void GetMeProfile(Action<IGraphResult> successCallback = null, Action<IGraphResult> errorCallback = null, int width = 128, int height = 128)
+        public void GetMeProfile(Action<IGraphResult> successCallback = null, Action<IGraphResult> errorCallback = null, int width = 128, int height = 128)
         {
             GetFacebookUserPicture("me",
                 width,
@@ -154,7 +159,7 @@ namespace Pancake.Facebook
                 });
         }
 
-        private void OnGetProfilePhotoCompleted(IGraphResult result)
+        public void OnGetProfilePhotoCompleted(IGraphResult result)
         {
             if (result.Texture != null) _profilePicture = result.Texture;
         }
@@ -221,6 +226,7 @@ namespace Pancake.Facebook
 
         public void Login(Action onComplete = null, Action onFaild = null, Action onError = null)
         {
+            Debug.Log("Login");
             onLoginComplete = onComplete;
             onLoginFaild = onFaild;
             onLoginError = onError;
@@ -237,12 +243,13 @@ namespace Pancake.Facebook
             if (userGender) scopes.Add("user_gender");
             if (userLink) scopes.Add("user_link");
             if (userMessengerContact) scopes.Add("user_messenger_contact");
-
-            FB.Mobile.LoginWithTrackingPreference(typeLogin, scopes, "pancake_nonce25", HandleResult);
+            
+            FB.LogInWithReadPermissions(scopes, HandleResult);
         }
 
         private void HandleResult(ILoginResult result)
         {
+            Debug.Log("Result");
             if (result == null) return;
 
             if (result.Error != null)
@@ -263,6 +270,7 @@ namespace Pancake.Facebook
                 GetMeProfile(OnGetProfilePhotoCompleted);
                 onLoginComplete?.Invoke();
                 onLoginComplete = null;
+                Debug.Log("USER_ID:" + UserId);
             }
             else
             {

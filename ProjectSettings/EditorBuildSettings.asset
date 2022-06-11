@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/FacebookSDK/main.unity
+    guid: 7641c3f8e25542f49ba32aebd8bb0ab4
   m_configObjects: {}
