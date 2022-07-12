@@ -14,6 +14,8 @@ for version 1.0.0
 "com.pancake.facebook": "https://github.com/pancake-llc/facebook.git?path=Assets/_Root#1.0.0",
 "com.google.external-dependency-manager": "https://github.com/pancake-llc/external-dependency-manager.git?path=Assets/_Root#1.2.169",
 "com.pancake.common": "https://github.com/pancake-llc/common.git?path=Assets/_Root#1.2.3",
+"com.cysharp.unitask": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask#2.3.1",
+"com.pancake.simplejson": "https://github.com/pancake-llc/SimpleJSON.git?path=Assets/_Root#1.0.2",
 ```
 
 
