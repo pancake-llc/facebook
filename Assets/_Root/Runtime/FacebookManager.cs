@@ -51,6 +51,7 @@ namespace Pancake.Facebook
         public bool IsRequestingProfile => _isRequestingProfile;
 
         public bool IsRequestingFriend => _isRequestingFriend;
+        public List<FriendData> FriendDatas => _friendDatas;
 
 #if UNITY_IOS
         public string UserName { get; private set; }
@@ -88,7 +89,7 @@ namespace Pancake.Facebook
             {
                 // Signal an app activation App Event
                 FB.ActivateApp();
-                
+
                 if (IsLoggedIn)
                 {
 #if UNITY_IOS
@@ -183,11 +184,13 @@ namespace Pancake.Facebook
 
             var jsonNode = JSON.Parse(result.RawResult);
             var data = jsonNode["data"];
-
             _friendDatas = new List<FriendData>();
             for (int i = 0; i < data.Count; i++)
             {
-                _friendDatas.Add(new FriendData {id = data[i]["id"].ToString(), name = data[i]["name"].ToString(), pictureUrl = data[i]["picture"]["data"]["url"]});
+                _friendDatas.Add(new FriendData
+                {
+                    id = data[i]["id"].ToString(), name = data[i]["name"].ToString(), pictureUrl = data[i]["picture"]["data"]["url"], avatar = null
+                });
             }
         }
 
@@ -212,21 +215,22 @@ namespace Pancake.Facebook
 
         #region login
 
-        private async void LoadProfileAllFriend()
+        public async UniTask<bool> LoadProfileAllFriend()
         {
             await UniTask.WaitUntil(() => !_isRequestingFriend && _friendDatas != null);
 
-            var avatars = new List<Texture2D>();
-            foreach (var friend in _friendDatas)
+            for (int i = 0; i < _friendDatas.Count; i++)
             {
-                var result = await LoadTextureInternal(friend.pictureUrl);
-                avatars.Add(result);
+                var friend = _friendDatas[i];
+                friend.avatar = await LoadTextureInternal(friend.pictureUrl);
+                _friendDatas[i] = friend;
             }
+
+            return true;
         }
 
         public void Login(Action onComplete = null, Action onFaild = null, Action onError = null)
         {
-            Debug.Log("Login");
             onLoginComplete = onComplete;
             onLoginFaild = onFaild;
             onLoginError = onError;
@@ -243,17 +247,31 @@ namespace Pancake.Facebook
             if (userGender) scopes.Add("user_gender");
             if (userLink) scopes.Add("user_link");
             if (userMessengerContact) scopes.Add("user_messenger_contact");
-            
-            FB.LogInWithReadPermissions(scopes, HandleResult);
+
+            if (typeLogin == LoginTracking.ENABLED)
+            {
+                if (Application.platform == RuntimePlatform.IPhonePlayer)
+                {
+                    FB.Mobile.LoginWithTrackingPreference(LoginTracking.ENABLED, scopes, "classic_nonce123", HandleResult);
+                }
+                else
+                {
+                    FB.LogInWithReadPermissions(scopes, HandleResult);
+                }
+            }
+            else
+            {
+                FB.Mobile.LoginWithTrackingPreference(LoginTracking.LIMITED, scopes, "limited_nonce123", HandleResult);
+            }
         }
 
         private void HandleResult(ILoginResult result)
         {
-            Debug.Log("Result");
             if (result == null) return;
 
             if (result.Error != null)
             {
+                Debug.Log(result.Error);
                 onLoginError?.Invoke();
                 return;
             }
@@ -270,7 +288,6 @@ namespace Pancake.Facebook
                 GetMeProfile(OnGetProfilePhotoCompleted);
                 onLoginComplete?.Invoke();
                 onLoginComplete = null;
-                Debug.Log("USER_ID:" + UserId);
             }
             else
             {
@@ -318,6 +335,7 @@ namespace Pancake.Facebook
             public string id;
             public string name;
             public string pictureUrl;
+            public Texture2D avatar;
         }
     }
 }
