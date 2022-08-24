@@ -1,21 +1,21 @@
 # What
-- Facebook SDK 14.0.0
+- Facebook SDK 14.1.0
 
 # Environment
 - Project open with unity 2021.3 LTS
-- Support unity 2019+
+- Support unity 2021+
 
 # How To Install
 
 Add the lines below to `Packages/manifest.json`
 
-for version 1.0.0
+for version 1.0.1
 ```csharp
-"com.pancake.facebook": "https://github.com/pancake-llc/facebook.git?path=Assets/_Root#1.0.0",
+"com.pancake.facebook": "https://github.com/pancake-llc/facebook.git?path=Assets/_Root#1.0.1",
 "com.google.external-dependency-manager": "https://github.com/pancake-llc/external-dependency-manager.git?path=Assets/_Root#1.2.169",
 "com.pancake.common": "https://github.com/pancake-llc/common.git?path=Assets/_Root#1.2.3",
 "com.cysharp.unitask": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask#2.3.1",
-"com.pancake.simplejson": "https://github.com/pancake-llc/SimpleJSON.git?path=Assets/_Root#1.0.2",
+"com.pancake.simplejson": "https://github.com/pancake-llc/SimpleJSON.git?path=Assets/_Root#1.0.3",
 ```
 
 

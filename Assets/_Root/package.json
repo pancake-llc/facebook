@@ -2,8 +2,8 @@
   "name": "com.pancake.facebook",
   "displayName": "Facebook",
   "description": "Provide feature facebook for unity",
-  "version": "1.0.0",
-  "unity": "2019.1",
+  "version": "1.0.1",
+  "unity": "2021.1",
   "category": "pancake",
   "author": {
     "name": "yenmoc",
