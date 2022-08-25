@@ -194,7 +194,7 @@ namespace Pancake.Facebook
             }
         }
 
-        private async UniTask<Texture2D> LoadTextureInternal(string url)
+        public async UniTask<Texture2D> LoadTextureInternal(string url)
         {
             using var request = UnityWebRequestTexture.GetTexture(url);
             request.timeout = 120;
