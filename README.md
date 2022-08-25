@@ -9,9 +9,9 @@
 
 Add the lines below to `Packages/manifest.json`
 
-for version 1.0.1
+for version 1.0.2
 ```csharp
-"com.pancake.facebook": "https://github.com/pancake-llc/facebook.git?path=Assets/_Root#1.0.1",
+"com.pancake.facebook": "https://github.com/pancake-llc/facebook.git?path=Assets/_Root#1.0.2",
 "com.google.external-dependency-manager": "https://github.com/pancake-llc/external-dependency-manager.git?path=Assets/_Root#1.2.169",
 "com.pancake.common": "https://github.com/pancake-llc/common.git?path=Assets/_Root#1.2.3",
 "com.cysharp.unitask": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask#2.3.1",
