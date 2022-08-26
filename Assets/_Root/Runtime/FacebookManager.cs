@@ -42,6 +42,7 @@ namespace Pancake.Facebook
         public bool IsInitialized => FB.IsInitialized;
         public bool IsLoggedIn => FB.IsLoggedIn;
         private CoroutineHandle _coroutineHandle;
+        private Action _onCompletedGetMeFriend;
 
         public string UserId { get; private set; }
         public string Token { get; private set; }
@@ -172,11 +173,12 @@ namespace Pancake.Facebook
             return Sprite.Create(texture2D, new Rect(0, 0, texture2D.width, texture2D.height), pivot);
         }
 
-        public void GetMeFriend()
+        public void GetMeFriend(Action onCompleted)
         {
             if (!IsLoggedIn || _isRequestingFriend) return;
             FriendDatas = null;
             _isRequestingFriend = true;
+            _onCompletedGetMeFriend = onCompleted;
             FB.API("/me/friends", HttpMethod.GET, OnGetFriendCompleted);
         }
 
@@ -197,6 +199,8 @@ namespace Pancake.Facebook
             }
 
             _isCompletedGetFriendData = true;
+            _onCompletedGetMeFriend?.Invoke();
+            _onCompletedGetMeFriend = null;
         }
 
         public async UniTask<Texture2D> LoadTextureInternal(string url)
