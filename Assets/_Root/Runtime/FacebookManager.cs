@@ -189,7 +189,7 @@ namespace Pancake.Facebook
 
             var jsonNode = JSON.Parse(result.RawResult);
             var data = jsonNode["data"];
-            
+            FriendDatas = new List<FriendData>();
             for (int i = 0; i < data.Count; i++)
             {
                 FriendDatas.Add(new FriendData
