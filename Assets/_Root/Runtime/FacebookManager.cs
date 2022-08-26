@@ -38,10 +38,10 @@ namespace Pancake.Facebook
         private Texture2D _profilePicture;
         private bool _isRequestingProfile;
         private bool _isRequestingFriend;
+        private bool _isCompletedGetFriendData;
         public bool IsInitialized => FB.IsInitialized;
         public bool IsLoggedIn => FB.IsLoggedIn;
         private CoroutineHandle _coroutineHandle;
-        private List<FriendData> _friendDatas = new List<FriendData>();
 
         public string UserId { get; private set; }
         public string Token { get; private set; }
@@ -51,7 +51,9 @@ namespace Pancake.Facebook
         public bool IsRequestingProfile => _isRequestingProfile;
 
         public bool IsRequestingFriend => _isRequestingFriend;
-        public List<FriendData> FriendDatas => _friendDatas;
+        public bool IsCompletedGetFriendData => _isCompletedGetFriendData;
+
+        public List<FriendData> FriendDatas { get; set; } = null;
 
 #if UNITY_IOS
         public string UserName { get; private set; }
@@ -173,7 +175,7 @@ namespace Pancake.Facebook
         public void GetMeFriend()
         {
             if (!IsLoggedIn || _isRequestingFriend) return;
-            FriendDatas.Clear();
+            FriendDatas = null;
             _isRequestingFriend = true;
             FB.API("/me/friends", HttpMethod.GET, OnGetFriendCompleted);
         }
@@ -193,6 +195,8 @@ namespace Pancake.Facebook
                     id = data[i]["id"].ToString(), name = data[i]["name"].ToString(), pictureUrl = data[i]["picture"]["data"]["url"], avatar = null
                 });
             }
+
+            _isCompletedGetFriendData = true;
         }
 
         public async UniTask<Texture2D> LoadTextureInternal(string url)
