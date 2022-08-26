@@ -41,7 +41,7 @@ namespace Pancake.Facebook
         public bool IsInitialized => FB.IsInitialized;
         public bool IsLoggedIn => FB.IsLoggedIn;
         private CoroutineHandle _coroutineHandle;
-        private List<FriendData> _friendDatas;
+        private List<FriendData> _friendDatas = new List<FriendData>();
 
         public string UserId { get; private set; }
         public string Token { get; private set; }
@@ -172,7 +172,8 @@ namespace Pancake.Facebook
 
         public void GetMeFriend()
         {
-            if (!IsLoggedIn) return;
+            if (!IsLoggedIn || _isRequestingFriend) return;
+            FriendDatas.Clear();
             _isRequestingFriend = true;
             FB.API("/me/friends", HttpMethod.GET, OnGetFriendCompleted);
         }
@@ -184,10 +185,10 @@ namespace Pancake.Facebook
 
             var jsonNode = JSON.Parse(result.RawResult);
             var data = jsonNode["data"];
-            _friendDatas = new List<FriendData>();
+            
             for (int i = 0; i < data.Count; i++)
             {
-                _friendDatas.Add(new FriendData
+                FriendDatas.Add(new FriendData
                 {
                     id = data[i]["id"].ToString(), name = data[i]["name"].ToString(), pictureUrl = data[i]["picture"]["data"]["url"], avatar = null
                 });
@@ -217,13 +218,13 @@ namespace Pancake.Facebook
 
         public async UniTask<bool> LoadProfileAllFriend()
         {
-            await UniTask.WaitUntil(() => !_isRequestingFriend && _friendDatas != null);
+            await UniTask.WaitUntil(() => !_isRequestingFriend && FriendDatas != null);
 
-            for (int i = 0; i < _friendDatas.Count; i++)
+            for (int i = 0; i < FriendDatas.Count; i++)
             {
-                var friend = _friendDatas[i];
+                var friend = FriendDatas[i];
                 friend.avatar = await LoadTextureInternal(friend.pictureUrl);
-                _friendDatas[i] = friend;
+                FriendDatas[i] = friend;
             }
 
             return true;
