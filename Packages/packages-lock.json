@@ -1,12 +1,5 @@
 {
   "dependencies": {
-    "com.cysharp.unitask": {
-      "version": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask#2.3.1",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "33d32baea4d50040e0601b725a694dcf3dcf6640"
-    },
     "com.google.external-dependency-manager": {
       "version": "https://github.com/pancake-llc/external-dependency-manager.git?path=Assets/_Root#1.2.169",
       "depth": 0,
@@ -14,21 +7,73 @@
       "dependencies": {},
       "hash": "8479d378666d8af0e30fc0308df447196857659d"
     },
-    "com.pancake.common": {
-      "version": "https://github.com/pancake-llc/common.git?path=Assets/_Root#1.2.5",
+    "com.pancake.heart": {
+      "version": "https://github.com/pancake-llc/heart.git?path=Assets/_Root",
       "depth": 0,
       "source": "git",
       "dependencies": {
-        "com.unity.nuget.newtonsoft-json": "3.0.2"
+        "com.unity.addressables": "1.19.19",
+        "com.unity.inputsystem": "1.4.2",
+        "com.unity.nuget.newtonsoft-json": "3.0.2",
+        "com.unity.mobile.notifications": "2.0.2"
       },
-      "hash": "09f0e9717aa5042a18bc1935ded86d811a1c9176"
+      "hash": "f9901b60ee7e531507bfeb69860729a1381786f7"
     },
-    "com.pancake.simplejson": {
-      "version": "https://github.com/pancake-llc/SimpleJSON.git?path=Assets/_Root#1.0.2",
+    "com.system-community.ben-demystifier": {
+      "version": "https://github.com/system-community/BenDemystifier.git?path=Assets/_Root#0.4.1",
       "depth": 0,
       "source": "git",
       "dependencies": {},
-      "hash": "cb8168a6e41f6531649d5befb3f895381365e1a3"
+      "hash": "550e24b66487b5be44f24e6d552e201c814fa278"
+    },
+    "com.system-community.harmony": {
+      "version": "https://github.com/system-community/harmony.git?path=Assets/_Root#2.2.2",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "c4d68cb50f2fcceda3c240727ecac3deeb4c0c99"
+    },
+    "com.system-community.reflection-metadata": {
+      "version": "https://github.com/system-community/SystemReflectionMetadata.git?path=Assets/_Root#5.0.0",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "10e380bf80b5d2311bf49f235a457bbf4b04e45b"
+    },
+    "com.system-community.stringtools": {
+      "version": "https://github.com/system-community/StringTools.git?path=Assets/_Root#1.0.0",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "e6a0ab48649ab87733bb3d3eccdef3e23c239da6"
+    },
+    "com.system-community.systemcollectionsimmutable": {
+      "version": "https://github.com/system-community/SystemCollectionsImmutable.git?path=Assets/_Root#5.0.0",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "29105c8d28a72fb500812c6e3de86e75bca5b93d"
+    },
+    "com.system-community.systemruntimecompilerservicesunsafe": {
+      "version": "https://github.com/system-community/SystemRuntimeCompilerServicesUnsafe.git?path=Assets/_Root#5.0.0",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "e3084b70c596260866a41681027907454c2aef51"
+    },
+    "com.unity.addressables": {
+      "version": "1.19.19",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.scriptablebuildpipeline": "1.19.6",
+        "com.unity.modules.assetbundle": "1.0.0",
+        "com.unity.modules.imageconversion": "1.0.0",
+        "com.unity.modules.jsonserialize": "1.0.0",
+        "com.unity.modules.unitywebrequest": "1.0.0",
+        "com.unity.modules.unitywebrequestassetbundle": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
     },
     "com.unity.ext.nunit": {
       "version": "1.0.6",
@@ -62,9 +107,34 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+    "com.unity.inputsystem": {
+      "version": "1.4.2",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.modules.uielements": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.mobile.notifications": {
+      "version": "2.0.2",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.modules.androidjni": "1.0.0"
+      },
+      "url": "https://packages.unity.com"
+    },
     "com.unity.nuget.newtonsoft-json": {
       "version": "3.0.2",
       "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.scriptablebuildpipeline": {
+      "version": "1.20.1",
+      "depth": 2,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"

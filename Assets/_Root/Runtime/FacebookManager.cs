@@ -1,7 +1,5 @@
-﻿using Cysharp.Threading.Tasks;
+﻿using Pancake.Threading.Tasks;
 using Facebook.Unity;
-using MEC;
-using SimpleJSON;
 using UnityEngine.Networking;
 
 namespace Pancake.Facebook
