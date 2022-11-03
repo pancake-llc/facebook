@@ -1,7 +1,6 @@
 {
   "dependencies": {
-    "com.google.external-dependency-manager": "https://github.com/pancake-llc/external-dependency-manager.git?path=Assets/_Root#1.2.169",
-    "com.pancake.heart": "https://github.com/pancake-llc/heart.git?path=Assets/_Root#1.0.5",
+    "com.google.external-dependency-manager": "https://github.com/google-unity/external-dependency-manager.git?path=Assets/_Root#1.2.169",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.ide.rider": "3.0.15",
     "com.unity.ide.visualstudio": "2.0.16",
