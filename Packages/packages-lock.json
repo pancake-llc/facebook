@@ -8,58 +8,23 @@
       "hash": "8479d378666d8af0e30fc0308df447196857659d"
     },
     "com.pancake.heart": {
-      "version": "https://github.com/pancake-llc/heart.git?path=Assets/_Root",
+      "version": "https://github.com/pancake-llc/heart.git?path=Assets/_Root#1.0.5",
       "depth": 0,
       "source": "git",
       "dependencies": {
         "com.unity.addressables": "1.19.19",
-        "com.unity.inputsystem": "1.4.2",
+        "com.unity.inputsystem": "1.4.3",
         "com.unity.nuget.newtonsoft-json": "3.0.2",
-        "com.unity.mobile.notifications": "2.0.2"
+        "com.unity.mobile.notifications": "2.1.0",
+        "com.unity.2d.sprite": "1.0.0"
       },
-      "hash": "f9901b60ee7e531507bfeb69860729a1381786f7"
+      "hash": "7db723e152c94c7717bd379343d65562ed37dbbe"
     },
-    "com.system-community.ben-demystifier": {
-      "version": "https://github.com/system-community/BenDemystifier.git?path=Assets/_Root#0.4.1",
+    "com.unity.2d.sprite": {
+      "version": "1.0.0",
       "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "550e24b66487b5be44f24e6d552e201c814fa278"
-    },
-    "com.system-community.harmony": {
-      "version": "https://github.com/system-community/harmony.git?path=Assets/_Root#2.2.2",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "c4d68cb50f2fcceda3c240727ecac3deeb4c0c99"
-    },
-    "com.system-community.reflection-metadata": {
-      "version": "https://github.com/system-community/SystemReflectionMetadata.git?path=Assets/_Root#5.0.0",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "10e380bf80b5d2311bf49f235a457bbf4b04e45b"
-    },
-    "com.system-community.stringtools": {
-      "version": "https://github.com/system-community/StringTools.git?path=Assets/_Root#1.0.0",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "e6a0ab48649ab87733bb3d3eccdef3e23c239da6"
-    },
-    "com.system-community.systemcollectionsimmutable": {
-      "version": "https://github.com/system-community/SystemCollectionsImmutable.git?path=Assets/_Root#5.0.0",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "29105c8d28a72fb500812c6e3de86e75bca5b93d"
-    },
-    "com.system-community.systemruntimecompilerservicesunsafe": {
-      "version": "https://github.com/system-community/SystemRuntimeCompilerServicesUnsafe.git?path=Assets/_Root#5.0.0",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "e3084b70c596260866a41681027907454c2aef51"
+      "source": "builtin",
+      "dependencies": {}
     },
     "com.unity.addressables": {
       "version": "1.19.19",
@@ -83,7 +48,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.rider": {
-      "version": "3.0.14",
+      "version": "3.0.15",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -92,7 +57,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.visualstudio": {
-      "version": "2.0.14",
+      "version": "2.0.16",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -108,7 +73,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.inputsystem": {
-      "version": "1.4.2",
+      "version": "1.4.3",
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -117,7 +82,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.mobile.notifications": {
-      "version": "2.0.2",
+      "version": "2.1.0",
       "depth": 1,
       "source": "registry",
       "dependencies": {
@@ -141,7 +106,7 @@
     },
     "com.unity.test-framework": {
       "version": "1.1.31",
-      "depth": 0,
+      "depth": 1,
       "source": "registry",
       "dependencies": {
         "com.unity.ext.nunit": "1.0.6",
@@ -156,18 +121,6 @@
       "source": "registry",
       "dependencies": {
         "com.unity.ugui": "1.0.0"
-      },
-      "url": "https://packages.unity.com"
-    },
-    "com.unity.timeline": {
-      "version": "1.6.4",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.modules.director": "1.0.0",
-        "com.unity.modules.animation": "1.0.0",
-        "com.unity.modules.audio": "1.0.0",
-        "com.unity.modules.particlesystem": "1.0.0"
       },
       "url": "https://packages.unity.com"
     },
@@ -269,14 +222,6 @@
       "source": "builtin",
       "dependencies": {
         "com.unity.modules.imageconversion": "1.0.0"
-      }
-    },
-    "com.unity.modules.subsystems": {
-      "version": "1.0.0",
-      "depth": 1,
-      "source": "builtin",
-      "dependencies": {
-        "com.unity.modules.jsonserialize": "1.0.0"
       }
     },
     "com.unity.modules.terrain": {
@@ -406,32 +351,6 @@
         "com.unity.modules.audio": "1.0.0",
         "com.unity.modules.ui": "1.0.0",
         "com.unity.modules.unitywebrequest": "1.0.0"
-      }
-    },
-    "com.unity.modules.vr": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {
-        "com.unity.modules.jsonserialize": "1.0.0",
-        "com.unity.modules.physics": "1.0.0",
-        "com.unity.modules.xr": "1.0.0"
-      }
-    },
-    "com.unity.modules.wind": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {}
-    },
-    "com.unity.modules.xr": {
-      "version": "1.0.0",
-      "depth": 0,
-      "source": "builtin",
-      "dependencies": {
-        "com.unity.modules.physics": "1.0.0",
-        "com.unity.modules.jsonserialize": "1.0.0",
-        "com.unity.modules.subsystems": "1.0.0"
       }
     }
   }
