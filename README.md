@@ -11,7 +11,7 @@ Add the lines below to `Packages/manifest.json`
 
 for version `14.1.0`
 ```csharp
-"com.pancake.facebook": "https://github.com/pancake-llc/facebook.git?path=Assets/_Root#14.1.0",
+"com.pancake.facebook": "https://github.com/pancake-llc/facebook.git#14.1.0",
 ```
 
 require `external-dependency-manager`
