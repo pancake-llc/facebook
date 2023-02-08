@@ -16,5 +16,5 @@ for version `14.1.0`
 
 require `external-dependency-manager`
 ```csharp
-"com.google.external-dependency-manager": "https://github.com/google-unity/external-dependency-manager.git?path=Assets/_Root#1.2.169",
+"com.google.external-dependency-manager": "https://github.com/google-unity/external-dependency-manager.git#1.2.169",
 ```
