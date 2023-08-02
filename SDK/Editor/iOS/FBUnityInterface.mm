@@ -16,6 +16,9 @@
 // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+#import <SafariServices/SafariServices.h>
+#import <AuthenticationServices/AuthenticationServices.h>
+#import <FBSDKCoreKit/FBSDKCoreKit-Swift.h>
 #import <FBSDKLoginKit/FBSDKLoginKit-Swift.h>
 #import <Foundation/NSJSONSerialization.h>
 
@@ -59,8 +62,7 @@
 
 - (void)didFinishLaunching:(NSNotification *)notification
 {
-  [[FBSDKApplicationDelegate sharedInstance] application:[UIApplication sharedApplication]
-                           didFinishLaunchingWithOptions:notification.userInfo];
+
 }
 
 - (void)didBecomeActive:(NSNotification *)notification
@@ -392,6 +394,9 @@ extern "C" {
 
   void IOSFBInit(const char *_appId, bool _frictionlessRequests, const char *_urlSuffix, const char *_userAgentSuffix)
   {
+    // Initialize SDK first
+    [[FBSDKApplicationDelegate sharedInstance] initializeSDK];
+
     // Set the user agent before calling init to ensure that calls made during
     // init use the user agent suffix.
     [FBSDKSettings.sharedSettings setUserAgentSuffix:[FBUnityUtility stringFromCString:_userAgentSuffix]];
