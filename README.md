@@ -1,5 +1,5 @@
 # What
-- Facebook SDK 16.0.1
+- Facebook SDK 17.0.1
 
 # Environment
 - Project open with unity 2021.3 LTS
@@ -9,9 +9,9 @@
 
 Add the lines below to `Packages/manifest.json`
 
-for version `16.0.1`
+for version `17.0.1`
 ```csharp
-"com.pancake.facebook": "https://github.com/pancake-llc/facebook.git#16.0.1",
+"com.pancake.facebook": "https://github.com/pancake-llc/facebook.git#17.0.1",
 ```
 
 require `external-dependency-manager`
